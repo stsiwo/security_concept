@@ -109,6 +109,39 @@
     
     - ...
     
+### 4 requirements (SAQ A) : June 11th, 2020.
+
+  2. Do not use vendor-supplied defaults for system passwords and other security parameters:
+    - don't use default password/setting for my system (e.g., os, software, and anything what involving the payment system)
+    - remove unnecessary default accounts
+
+  6. Develop and maintain secure systems and applications:
+    - the all system components are protected by known vulnerabilities by security patches installed.
+    - critial security patches is up to date. (within one month)
+
+  8. Identify and authenticate access to system components:
+    - must have a unique id for each user who access to your system/cardholder data
+    - password is set to all user who access to the system
+    - immediate deactivation/removal account if the user terminate its account
+    - password must follow:
+      - min 7 chars length, and
+      - contains numeric and alphabetic chars
+      - or has complexity equivalent to above 
+    - no generic user IDs and accounts (e.g., login as Admin, Student, or Clerk)
+      - should login as Name/Password
+    - no shared user IDS for sysem admin (shared user id: an id used for multiple users)
+
+  9. Restrict physical access to cardholder data
+    - all media (e.g., computers, papers, reports, faxes, and electronic media) is secured.
+      - remove every hardcopies if no longer needed.
+      - ...
+  12. Maintain a policy that addresses information security for all personnel
+    - personnel: full-time, part-time employees, temporary employees who are involved in this system.
+  
+
+  SAQ A official form: https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf?agreement=true&time=1623568416737
+  
+    
 ## Integration with Stripe:
 
    - the integration with Stripe, is certified as a PCI level 1 Service Provider, allows us to reduce the burden of CPI requirement.
@@ -152,3 +185,22 @@
   4. review the SAQ (don't need to submit SAQ if your business is small. see the criteria)
 
   ref: https://stackoverflow.com/questions/22029611/do-need-to-worry-about-pci-compliance-if-i-use-stripe-or-authorize-net-with-wooc
+
+# Q&A
+
+## DSS 3.2 has strict password policy, but Google, Facebook, and others don't follow the policy. why?
+
+  - password policy: 
+    - Users to change passwords at least every 90 days.
+    - ...
+  
+  - many companies don't implement this. why?
+    - important point is that the account can access to cardholder data or not.
+    - if the account can access to it, you need to follow the strict password policy.
+    - if not, you don't need to.
+
+  - quote from DSS 3.2
+  ```
+    Note: These requirements are applicable for all accounts, including point-of-sale accounts, with administrative capabilities and all accounts used to view or access cardholder data or to access systems with cardholder data. This includes accounts used by vendors and other third parties (for example, for support or maintenance). These requirements do not apply to accounts used by consumers (e.g., cardholders). 
+  ```
+  - ref: https://security.stackexchange.com/questions/151381/to-whom-do-the-pci-dss-password-requirements-apply
