@@ -141,4 +141,14 @@
       - Stripe determines what documentation for SAQ might be required based on how you're processing payments and provides this information in 
     
       - the response from Stripe, which is non-sensitive card information such as the cart type, the last four digits of the card, and expiration date. THIS INFORMATION IS NOT SUBJECT TO PCI COMPLIANCE, 
- 
+
+### Flow with Stripe (Simplest & Easy)
+
+  1. serve your website via HTTPS.
+  2. use Stripe Checkout/Elements.
+    - this makes your website out of scope of PCI compliance since your server never touch any sensitive information. 
+    - so you just need to do SAQ (type: A)
+  3. you will receive the completed SAQ
+  4. review the SAQ (don't need to submit SAQ if your business is small. see the criteria)
+
+  ref: https://stackoverflow.com/questions/22029611/do-need-to-worry-about-pci-compliance-if-i-use-stripe-or-authorize-net-with-wooc
